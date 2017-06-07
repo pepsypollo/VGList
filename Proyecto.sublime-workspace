@@ -1,0 +1,380 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"styl",
+				"style\tAttr"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"valida",
+				"validaPassc"
+			],
+			[
+				"cha",
+				"charset\tAttr"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"label",
+				"label\t<label> with <input>"
+			],
+			[
+				"inputs",
+				"inputs\tinput - submit"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"inpu",
+				"inputh\tinput - hidden"
+			],
+			[
+				"a",
+				"a\t<a>"
+			],
+			[
+				"con",
+				"consulta"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/VGList"
+	],
+	"file_history":
+	[
+	],
+	"find":
+	{
+		"height": 46.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"comment=",
+			"beautiful katamari",
+			"white",
+			"web\\Web",
+			"D:\\web\\Web",
+			"igentahuman",
+			"Mama Anata",
+			"0.7",
+			"Love Song",
+			"Sennen",
+			"Anomie",
+			"One Room",
+			"Bakudan",
+			"0.6",
+			"E:\\Persona",
+			"www.persona.es",
+			"ÀÄÄÄ",
+			".torrent",
+			"³       ",
+			"ÃÄÄÄ",
+			"2015",
+			"2014",
+			"default-character-set",
+			"character-set-client-handshake",
+			"innodb_large_prefix",
+			"innodb_file_per_table",
+			"innodb_file_format",
+			"innodb_file_format = Barracuda",
+			"[client]",
+			"C:\\Users\\pepee\\Documents\\WooMoodle\\wordpress",
+			"mwordpress",
+			"DocumentRoot",
+			"wmoodle",
+			"dummy-host2.example.com",
+			"##",
+			" ",
+			"<a href=\"",
+			"\">",
+			"Gyakuten Saiban Sound BOX OST FLAC.z",
+			"<img src=\"//t1.daumcdn.net/tistory_admin/blogs/image/extension/unknown.gif\" alt=\"\" style=\"vertical-align: middle;\">",
+			"</a></div><p></p>",
+			"<div class=\"imageblock center\" style=\"text-align: center; clear: both;\">",
+			"<img src=\"//t1.daumcdn.net/tistory_admin/blogs/image/extension/zip.gif\" alt=\"\" style=\"vertical-align: middle;\">",
+			"<p style=\"MARGIN: 0px\"></p>",
+			"src=",
+			"td",
+			"<br>",
+			"250",
+			"<a",
+			" class=\"ini\"",
+			"href",
+			",",
+			"submit",
+			"td",
+			"btn",
+			"td",
+			"strcomp",
+			"<br>",
+			"<label",
+			"td",
+			"borrar",
+			"submit",
+			"vehiculo",
+			"br",
+			"<br>",
+			"form",
+			"div",
+			"\"",
+			"precio",
+			"<label",
+			"subm",
+			"<input",
+			"<select",
+			"<input",
+			"<label",
+			"br>",
+			"<br>",
+			"label",
+			"input",
+			"\"",
+			"<label",
+			"<l",
+			"<",
+			"    ",
+			".f",
+			"\"active\"",
+			"../",
+			"./",
+			"sec/",
+			"    ",
+			"                        ",
+			"                       ",
+			"                      ",
+			"                     ",
+			"                    ",
+			"                   ",
+			"                  ",
+			"                 ",
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			" ",
+			"naruto",
+			"'",
+			"user",
+			"`",
+			"\"",
+			"'",
+			"check",
+			"error",
+			"activa",
+			"enviar",
+			"Text",
+			"text",
+			"Text",
+			"text",
+			"muestraErrorInputText",
+			"caracteres"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Proyecto.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
