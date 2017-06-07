@@ -1,21 +1,3 @@
-<?php
-	if(isset($_POST['Registro'])){
-		$con=mysqli_connect('localhost','root','','twotter');
-		mysqli_set_charset($con, "utf8");
-		$user=$_POST['user'];
-		$pass=$_POST['pass'];
-		$email=$_POST['email'];
-		$add=mysqli_query($con,"INSERT INTO usuarios (email,user,pass) VALUES ('$email','$user','$pass');");
-		if($add){
-			session_start();
-			$_SESSION['user']=$user;
-			echo "Añadido";
-			header("Refresh:2; url=dashboard.php");
-		}else{
-			echo "Usuario cogido";
-		}
-	}
-?>
 <div id="formul">
 	<form action="#" method="post" accept-charset="utf-8">
 	<h3>Regístrate para acceder</h3>
