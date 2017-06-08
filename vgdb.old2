@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2017 a las 13:22:56
+-- Tiempo de generación: 06-06-2017 a las 14:01:58
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -165,7 +165,6 @@ CREATE TABLE `recomendacion` (
   `id` int(5) NOT NULL,
   `contenido` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_juego` int(5) NOT NULL,
-  `id_juego2` int(5) NOT NULL,
   `id_usuario` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -184,14 +183,6 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`img`, `user`, `pass`, `email`, `allow`) VALUES
-('/img/user/default.png', 'paco', 'user', 'paco@gmail.com', 1),
-('/img/user/default.png', 'pepe', 'admin', 'pepe.esp.ort@gmail.com', 1);
-
---
 -- Índices para tablas volcadas
 --
 
@@ -199,7 +190,7 @@ INSERT INTO `usuario` (`img`, `user`, `pass`, `email`, `allow`) VALUES
 -- Indices de la tabla `analisis`
 --
 ALTER TABLE `analisis`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_juego`,`id_usuario`),
   ADD KEY `id_juego` (`id_juego`),
   ADD KEY `id_usuario` (`id_usuario`);
 
@@ -213,7 +204,7 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `juego`
 --
 ALTER TABLE `juego`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_plat`),
   ADD KEY `id_plat` (`id_plat`);
 
 --
@@ -227,7 +218,7 @@ ALTER TABLE `lista`
 -- Indices de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_post`,`id_user`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_post` (`id_post`);
 
@@ -235,7 +226,7 @@ ALTER TABLE `mensaje`
 -- Indices de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_usuario`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
@@ -248,7 +239,7 @@ ALTER TABLE `plataforma`
 -- Indices de la tabla `post`
 --
 ALTER TABLE `post`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`n_cat`,`id_user`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `n_cat` (`n_cat`);
 
@@ -277,10 +268,9 @@ ALTER TABLE `puntos_recomendacion`
 -- Indices de la tabla `recomendacion`
 --
 ALTER TABLE `recomendacion`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`id_juego`,`id_usuario`),
   ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_juego` (`id_juego`),
-  ADD KEY `id_juego2` (`id_juego2`);
+  ADD KEY `id_juego` (`id_juego`);
 
 --
 -- Indices de la tabla `usuario`
@@ -392,8 +382,7 @@ ALTER TABLE `puntos_recomendacion`
 --
 ALTER TABLE `recomendacion`
   ADD CONSTRAINT `recomendacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`user`),
-  ADD CONSTRAINT `recomendacion_ibfk_2` FOREIGN KEY (`id_juego`) REFERENCES `juego` (`id`),
-  ADD CONSTRAINT `recomendacion_ibfk_3` FOREIGN KEY (`id_juego2`) REFERENCES `juego` (`id`);
+  ADD CONSTRAINT `recomendacion_ibfk_2` FOREIGN KEY (`id_juego`) REFERENCES `juego` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

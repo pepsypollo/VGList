@@ -9,12 +9,12 @@
 	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="navbar" class="collapse navbar-collapse">
+	<div id="navbar" class="collapse navbar-collapse navbar-inverse">
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="">Inicio</a></li>
-			<li><a href="">Juegos</a></li>
-			<li><a href="">Foro</a></li>
-			<li><a href="">Noticias</a></li>
+			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'index')) echo 'class="active"'; ?>><a href="index.php">Inicio</a></li>
+			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'juegos')) echo 'class="active"'; ?>><a href="juegos.php">Juegos</a></li>
+			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'foro')) echo 'class="active"'; ?>><a href="foro.php">Foro</a></li>
+			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'noticias')) echo 'class="active"'; ?>><a href="noticias.php">Noticias</a></li>
 		</ul>
 	<?php
 		if(!isset($_SESSION['user']))
@@ -48,7 +48,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown">Registrarse <span class="caret"></a>
                 <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                     <div class="col-lg-12">
-						<?php include 'register.php' ?>
+						<?php include 'register.php' ?><br>
                     </div>
                 </ul>
             </li>
@@ -56,7 +56,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown">Iniciar Sesión <span class="caret"></a>
                 <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
                     <div class="col-lg-12">
-						<?php include 'login.php' ?>
+						<?php include 'login.php' ?><br>
                     </div>
                 </ul>
             </li>
