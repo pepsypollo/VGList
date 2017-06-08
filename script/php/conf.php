@@ -1,7 +1,7 @@
 <?php
 	$title="VideoGameList";
-	$root="D:\VGList";
-	$dir="www.vglist.es";
+	$root=$_SERVER['DOCUMENT_ROOT'];
+	$dir=$_SERVER['SERVER_NAME'];
 	$db_user="root";
 	$db_pass="";
 	$con=mysqli_connect("$dir","$db_user","$db_pass","vgdb");

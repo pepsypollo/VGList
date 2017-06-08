@@ -11,7 +11,7 @@
 <body>
 	<div id="navbar" class="collapse navbar-collapse navbar-inverse">
 		<ul class="nav navbar-nav">
-			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'index')) echo 'class="active"'; ?>><a href="index.php">Inicio</a></li>
+			<li <?php if(!preg_match('*juegos|foro|noticias*', $_SERVER['REQUEST_URI'])) echo 'class="active"'; ?>><a href=http://<?php echo $dir; ?>>Inicio</a></li>
 			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'juegos')) echo 'class="active"'; ?>><a href="juegos.php">Juegos</a></li>
 			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'foro')) echo 'class="active"'; ?>><a href="foro.php">Foro</a></li>
 			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'noticias')) echo 'class="active"'; ?>><a href="noticias.php">Noticias</a></li>
