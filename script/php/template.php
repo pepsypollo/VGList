@@ -25,8 +25,6 @@
 			if(isset($_COOKIE['user'])){
 				unset($_COOKIE['user']);
 	    		setcookie('user','',time()-3600,'/');
-				unset($_COOKIE['img']);
-	    		setcookie('img','',time()-3600,'/');
 	    	}
 	?>
 	<script>location.href="/";</script>

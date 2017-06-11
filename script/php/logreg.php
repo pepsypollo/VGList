@@ -1,8 +1,10 @@
 <?php
 	//Cookies
-	if(isset($_COOKIE['user'])){
-		$_SESSION['user']=$_COOKIE['user'];
-		$_SESSION['img']=$_COOKIE['img'];
+	if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
+		$sesion=mysqli_query($con,"SELECT user,img FROM usuario WHERE user='".$_COOKIE['user']."';");
+		$sesion=mysqli_fetch_array($sesion,MYSQLI_ASSOC);
+		$_SESSION['user']=$sesion['user'];
+		$_SESSION['img']=$sesion['img'];
 	}
 	//Log in
 	if(isset($_POST['Inicia'])){
@@ -19,7 +21,6 @@
 			$_SESSION['img']=$check['img'];
 			if(isset($_POST['keep'])){
 				setcookie('user', $_SESSION['user'], time()+60*60*24*365,'/');
-				setcookie('img', $_SESSION['img'], time()+60*60*24*365,'/');
 			}
 		}
 	}
