@@ -31,23 +31,23 @@
 		$pass=$_POST['pass'];
 		$email=$_POST['email'];
 
-		$imgTam=$_FILES['foto']['size'];
-		$imgName=$_FILES['foto']['tmp_name'];
-		echo "1:".$imgTam." 2:".$imgName;
-		$add=mysqli_query($con,"INSERT INTO usuario (user,email,pass) VALUES ('$user','$email','$pass');");
+
+		echo $_FILES['foto']['name'];
+		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass) VALUES ('/img/user/default.png','$user','$email','$pass');");
 		
+		//Registro correcto
 		if($add){
-			$_SESSION['user']=$user;
-        	$validaImg=subirImg('foto','img/user/',$user);
-        	echo $validaImg;
-?>
-<script>window.alert("Registro realizado correctamente, ahora puedes iniciar sesión")</script>
-<?php
-			echo "Añadido";
+			//Subir foto de perfil
+			if($_FILES['foto']['name']!="")
+				$validaImg=subirImg('foto','img/user/',$user);
+			if(isset($validaImg))
+				mysqli_query($con,"UPDATE 'usuario' SET 'img'='".$validaImg."', WHERE 1");
+
+			?><script>window.alert("Registro realizado correctamente, ahora puedes iniciar sesión")</script><?php
+
+		//Usuario ya registrado
 		}else{
-?>
-<script>window.alert("Este nombre de usuario ya esta registrado")</script>
-<?php
+			?><script>window.alert("Este nombre de usuario ya esta registrado")</script><?php
 		}
 	}
 ?>

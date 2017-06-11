@@ -1,6 +1,6 @@
 <div id="formul">
 	<h3>Regístrate para acceder</h3>
-	<form action="#" method="post" accept-charset="utf-8">
+	<form enctype="multipart/form-data" action="#" method="post" accept-charset="utf-8">
 		<label for="user">Nombre de usuario</label><br>
 		<input type="text" name="user" class="regform" id="user" required><br>
 		<span class="error oculto tooltip" id="errorNombre"></span><br>

@@ -1,4 +1,4 @@
-<form action="#" method="post" accept-charset="utf-8">
+<form enctype="multipart/form-data" action="#" method="post" accept-charset="utf-8">
 	<label for="nombre">Titulo</label><br>
 	<input type="text" name="nombre" id="nombre" required><br>
 	<span class="error oculto" id="errorNombre"></span><br>
