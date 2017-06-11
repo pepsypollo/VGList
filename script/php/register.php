@@ -2,23 +2,23 @@
 	<h3>Regístrate para acceder</h3>
 	<form action="#" method="post" accept-charset="utf-8">
 		<label for="user">Nombre de usuario</label><br>
-		<input type="text" name="user" id="user" required><br>
-		<span class="error oculto" id="errorNombre"></span><br>
+		<input type="text" name="user" class="regform" id="user" required><br>
+		<span class="error oculto tooltip" id="errorNombre"></span><br>
 
 		<label for="email">Email</label><br>
-		<input type="email" name="email" id="email" required><br>
+		<input type="email" name="email" class="regform" id class="regform" class="regform"="email" required><br>
 		<span class="error oculto" id="errorEmail"></span><br>
 
 		<label for="foto">Imagen de perfil</label><br>
-		<input type="file" name="Foto" id="foto">
+		<input type="file" name="foto" id="foto">
 		<span class="error oculto" id="errorNombre"></span><br>
 
 		<label for="pass">Contraseña</label><br>
-		<input type="password" name="pass" id="pass" required><br>
+		<input type="password" name="pass" id="pass" class="regform" class="regform" required><br>
 		<span class="error oculto" id="errorPass"></span><br>
 
 		<label for="passc">Vuelve a escribir la contraseña</label><br>
-		<input type="password" name="passc" id="passc" required><br>
+		<input type="password" name="passc" id="passc" class="regform" required><br>
 		<span class="error oculto" id="errorPassc"></span><br>
 
 		<input type="checkbox" name="term" id="term" required>

@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title><?php echo "$title" ?></title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/styles.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </head>

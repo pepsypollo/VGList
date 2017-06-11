@@ -1,0 +1,41 @@
+textarea,[type=text],[type=email],[type=password]{
+	background-color:gray;
+	color:white;
+	border:0px;
+}
+textarea,[type=text]:hover,[type=text]:focus,[type=email]:hover,[type=email]:focus,[type=password]:hover,[type=password]:focus{
+	background-color:lightgray;
+	color:black;
+}
+textarea,[type=text].error,[type=email].error,[type=password].error{
+	background-color:#FFE6E6
+	border:1px solid red;
+}
+[type=text].correcto,[type=email].correcto,[type=password].correcto{
+	background-color:lightgreen;
+}
+form{
+	background-color:lightgray;
+	padding: 25px;
+}
+label{
+	text-align: left;
+}
+.regform{
+	width:300px;
+}
+input.error{
+	background-color:red;
+}
+form span{
+	float:right;
+}
+span.error{
+	color:red;
+}
+span.oculto{
+	display:none;
+}
+span.visible{
+	display:inline;
+}

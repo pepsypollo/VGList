@@ -7,7 +7,7 @@
 	<input type="password" name="passlog" id="passlog" required><br>
 	<span class="error oculto" id="errorPasslog"></span><br>
 	<input type="checkbox" name="keep" id="keep">
-	<label for="keep">No cerrar sesión</label><br>
+	<label for="keep">No cerrar sesión</label><br><br>
 	<input type="submit" name="Inicia" value="Inicia" id="enviar">
 </form>
 
