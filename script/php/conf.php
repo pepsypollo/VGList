@@ -8,4 +8,5 @@
 	$con=mysqli_connect("$dir","$db_user","$db_pass","vgdb");
 	mysqli_set_charset($con, "utf8");
 	session_start();
+	include 'redirect.php';
 ?>

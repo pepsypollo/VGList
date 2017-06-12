@@ -1,16 +1,17 @@
-<?php
+	<?php
 	//Cookies
 	if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
-		$sesion=mysqli_query($con,"SELECT user,img FROM usuario WHERE user='".$_COOKIE['user']."';");
+		$sesion=mysqli_query($con,"SELECT user,img,allow FROM usuario WHERE user='".$_COOKIE['user']."';");
 		$sesion=mysqli_fetch_array($sesion,MYSQLI_ASSOC);
 		$_SESSION['user']=$sesion['user'];
 		$_SESSION['img']=$sesion['img'];
+		$_SESSION['allow']=$sesion['allow'];
 	}
 	//Log in
 	if(isset($_POST['Inicia'])){
 		$userlog=$_POST['userlog'];
 		$passlog=$_POST['passlog'];
-		$check=mysqli_query($con,"SELECT user,pass,img FROM usuario WHERE user='$userlog' AND pass='$passlog';");
+		$check=mysqli_query($con,"SELECT user,img,allow FROM usuario WHERE user='$userlog' AND pass='$passlog';");
 		$check=mysqli_fetch_array($check,MYSQLI_ASSOC);
 		$nombre=$check['user'];
 
@@ -19,6 +20,7 @@
 		}else{
 			$_SESSION['user']=$nombre;
 			$_SESSION['img']=$check['img'];
+			$_SESSION['allow']=$check['allow'];
 			if(isset($_POST['keep'])){
 				setcookie('user', $_SESSION['user'], time()+60*60*24*365,'/');
 			}
@@ -32,7 +34,6 @@
 		$email=$_POST['email'];
 
 
-		echo $_FILES['foto']['name'];
 		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass) VALUES ('/img/user/default.png','$user','$email','$pass');");
 		
 		//Registro correcto
