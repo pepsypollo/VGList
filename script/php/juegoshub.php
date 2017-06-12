@@ -1,6 +1,8 @@
 <form action="#" method="get" accept-charset="utf-8">
 	<input type="search" name="datos" placeholder="Buscar juego">
 	<input type="submit" name="Busqueda" value="Busqueda">
+	<input type="hidden" name="count" value="5">
+	<input type="hidden" name="page" value="1">
 </form>
 <h4>Entradas por página</h4>
 <?php
@@ -45,7 +47,7 @@
 		echo "'><a href='juegos.php?";
 		if(isset($_GET['Busqueda']))
 			echo "datos=$_GET[datos]&Busqueda=Busqueda&";
-		echo "page=$i&count=$count'>$i</a></li>";
+		echo "count=$count&page=$i'>$i</a></li>";
 	}
 	echo "</ol>";
 
@@ -72,7 +74,7 @@
 		echo "'><a href='juegos.php?";
 		if(isset($_GET['Busqueda']))
 			echo "datos=$_GET[datos]&Busqueda=Busqueda&";
-		echo "page=$i&count=$count'>$i</a></li>";
+		echo "count=$count&page=$i'>$i</a></li>";
 	}
 	echo "</ol>";
 ?>
