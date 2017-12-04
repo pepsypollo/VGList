@@ -17,5 +17,5 @@
 		?>
 	</select><br>
 
-	<input type="submit" name="Insertar" value="post" id="post">
+	<input type="submit" name="Insertar" value="post" id="Publicar">
 </form>

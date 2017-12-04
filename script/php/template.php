@@ -14,7 +14,7 @@
 		<ul class="nav navbar-nav">
 			<li <?php if(!preg_match('*juegos|foro|noticias*', $_SERVER['REQUEST_URI'])) echo 'class="active"'; ?>><a href=http://<?php echo $dir; ?>>Inicio</a></li>
 			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'juegos')) echo 'class="active"'; ?>><a href="/juegos.php?count=5&page=1">Juegos</a></li>
-			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'foro')) echo 'class="active"'; ?>><a href="foro.php">Foro</a></li>
+			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'foro')) echo 'class="active"'; ?>><a href="foro.php?count=5&page=1">Foro</a></li>
 			<li <?php if(strpos($_SERVER['REQUEST_URI'], 'noticias')) echo 'class="active"'; ?>><a href="noticias.php">Noticias</a></li>
 		</ul>
 	<?php

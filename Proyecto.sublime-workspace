@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"id",
+				"id_plat"
+			],
+			[
+				"pu",
+				"publicacion"
+			],
+			[
 				"styl",
 				"style\tAttr"
 			],
@@ -120,20 +132,40 @@
 	},
 	"expanded_folders":
 	[
-		"/D/VGList"
+		"/C/Users/pepee/VGList",
+		"/C/Users/pepee/VGList/script",
+		"/C/Users/pepee/VGList/script/php"
 	],
 	"file_history":
 	[
+		"/C/Users/pepee/VGList/juegos.php",
+		"/C/Users/pepee/VGList/script/php/juegoshub.php",
+		"/C/Users/pepee/VGList/script/php/template.php",
+		"/C/Users/pepee/VGList/foro.php",
+		"/C/Users/pepee/VGList/script/php/foropostnuevo.php",
+		"/C/Users/pepee/VGList/script/php/foropost.php",
+		"/C/Users/pepee/VGList/script/php/forohub.php",
+		"/C/Users/pepee/VGList/script/php/juegoentrada.php",
+		"/C/Users/pepee/VGList/script/php/juegonuevo.php",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.755/Main2.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.165/Main.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.959/HiloTablaMultiplicar2.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.073/HiloTablaMultiplicar.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.850/HiloTablaMultiplicar2.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.323/Main.java",
+		"/C/Users/pepee/AppData/Local/Temp/Rar$DIa0.302/Main2.java",
+		"/C/Users/pepee/VGList/script/php/scripts.php"
 	],
 	"find":
 	{
-		"height": 46.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 104.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -141,6 +173,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$get",
+			"h1",
+			"$juego",
+			"juegos.php",
+			"entradaJuego",
+			"$get",
+			"`",
+			"nueva",
 			"comment=",
 			"beautiful katamari",
 			"white",
@@ -260,15 +300,7 @@
 			"\"",
 			"'",
 			"check",
-			"error",
-			"activa",
-			"enviar",
-			"Text",
-			"text",
-			"Text",
-			"text",
-			"muestraErrorInputText",
-			"caracteres"
+			"error"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -276,6 +308,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"foro.php"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -293,7 +326,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -334,7 +367,7 @@
 	"project": "Proyecto.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -372,7 +405,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 223.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

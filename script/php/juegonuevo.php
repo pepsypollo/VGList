@@ -9,11 +9,10 @@
 	<textarea name="sinopsis" id="sinopsis"></textarea><br>
 	
 	<label for="publi">Publicación</label><br>
-	<input type="date" name="publi" id="publi"><br>
+	<input type="date" name="publi" id="publi" required><br>
 
 	<label for="plat">Plataforma</label><br>
 	<select name="plat" multiple>
-		<option value="0" selected>Indefinido</option>
 		<?php 
 			$lista=mysqli_query($con,"SELECT * FROM plataforma;");
 			$lista=mysqli_fetch_all($lista,MYSQLI_ASSOC);

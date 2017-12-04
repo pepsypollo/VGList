@@ -34,8 +34,4 @@
 			}
 		}
 	}
-
-	function entradaJuego($id){
-
-	}
 ?>
