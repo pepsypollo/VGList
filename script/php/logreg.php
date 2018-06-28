@@ -32,20 +32,19 @@
 		$user=$_POST['user'];
 		$pass=$_POST['pass'];
 		$email=$_POST['email'];
+		$validaImg="/img/user/default.png";
 
+		//Subir foto de perfil
+		if($_FILES['foto']['name']!=""){
+			$validaImg=subirImg('foto','img/user/',$user);
+			mysqli_query($con,"UPDATE 'usuario' SET 'img'='".$validaImg."', WHERE 1");
+		}
 
-		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass) VALUES ('/img/user/default.png','$user','$email','$pass');");
+		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass) VALUES ('$validaImg','$user','$email','$pass');");
 		
 		//Registro correcto
 		if($add){
-			//Subir foto de perfil
-			if($_FILES['foto']['name']!="")
-				$validaImg=subirImg('foto','img/user/',$user);
-			if(isset($validaImg))
-				mysqli_query($con,"UPDATE 'usuario' SET 'img'='".$validaImg."', WHERE 1");
-
 			?><script>window.alert("Registro realizado correctamente, ahora puedes iniciar sesión")</script><?php
-
 		//Usuario ya registrado
 		}else{
 			?><script>window.alert("Este nombre de usuario ya esta registrado")</script><?php

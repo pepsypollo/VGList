@@ -30,6 +30,7 @@
 		$sinopsis="Aun no hay sinopsis";
 		$publi="";
 		$n_plat="0";
+		$validaImg="/img/juego/default.png";
 		
 		if(isset($_POST['sinopsis']))
 			$sinopsis=$_POST["sinopsis"];
@@ -40,23 +41,20 @@
 		if(isset($_POST['plat']))
 			$n_plat=$_POST["plat"];
 
+		//Subir foto de perfil
+		if(isset($_FILES['foto']['name']))
+			if($_FILES['foto']['name']!="")
+				$validaImg=subirImg('foto','img/user/',$user);
 
-		$add=mysqli_query($con,"INSERT INTO juego (nombre,publicacion,sinopsis,id_plat,imagen) VALUES ('$nombre','$publi','$sinopsis','$n_plat','/img/user/default.png');");
+		$add=mysqli_query($con,"INSERT INTO juego (nombre,publicacion,sinopsis,id_plat,imagen) VALUES ('$nombre','$publi','$sinopsis','$n_plat','$validaImg');");
 		
 		//Registro correcto
 		if($add){
-			//Subir foto de perfil
-			if(isset($_FILES['foto']['name']))
-				if($_FILES['foto']['name']!="")
-					$validaImg=subirImg('foto','img/user/',$user);
-			if(isset($validaImg))
-				mysqli_query($con,"UPDATE 'juego' SET 'imagen'='".$validaImg."', WHERE 1");
-
-				if($_SESSION['allow']){
-					?><script>window.alert("Entrada añadida correctamente")</script><?php
-				}else{
-					?><script>window.alert("Entrada pendiente de aprobacion de un moderador")</script><?php
-				}
+			if($_SESSION['allow']){
+				?><script>window.alert("Entrada añadida correctamente")</script><?php
+			}else{
+				?><script>window.alert("Entrada pendiente de aprobacion de un moderador")</script><?php
+			}
 
 		//Usuario ya registrado
 		}else{

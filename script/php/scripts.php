@@ -10,7 +10,7 @@
 		}
 
 		//Check file size
-		if($_FILES[$form]["size"]>500000){
+		if($_FILES[$form]["size"]>5000000){
 			?><script>window.alert("Imagen demasiado grande")</script><?php
 			return false;
 		}
@@ -21,17 +21,12 @@
 			return false;
 		}
 
-		//Check  if $valida is set to 0 by an error
-		if(!$valida){
-			return false;
-
-		//if everything is ok, try to upload file
+		//if everything is ok, try to upload file	
+		if(move_uploaded_file($_FILES[$form]["tmp_name"],$rutaImg)){
+			return $rutaImg;
 		}else{
-			if(move_uploaded_file($_FILES[$form]["tmp_name"],$rutaImg)){
-				return $rutaImg;
-			}else{
-				return false;
-			}
+			return false;
 		}
+	
 	}
 ?>
