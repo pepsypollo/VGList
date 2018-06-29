@@ -35,12 +35,10 @@
 		$validaImg="/img/user/default.png";
 
 		//Subir foto de perfil
-		if($_FILES['foto']['name']!=""){
+		if($_FILES['foto']['name']!="")
 			$validaImg=subirImg('foto','img/user/',$user);
-			mysqli_query($con,"UPDATE 'usuario' SET 'img'='".$validaImg."', WHERE 1");
-		}
 
-		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass) VALUES ('$validaImg','$user','$email','$pass');");
+		$add=mysqli_query($con,"INSERT INTO usuario (img,user,email,pass,allow) VALUES ('$validaImg','$user','$email','$pass',0);");
 		
 		//Registro correcto
 		if($add){

@@ -1,18 +1,18 @@
 <form enctype="multipart/form-data" action="#" method="post" accept-charset="utf-8">
 	<label for="nombre">Titulo</label><br>
-	<input type="text" name="nombre" id="nombre" required><br>
+	<input class='form-control' type="text" name="nombre" id="nombre" required><br>
 
 	<label for="foto">Imagen</label><br>
-	<input type="file" name="Foto" id="foto">
+	<input class='form-control' type="file" name="foto" id="foto">
 
 	<label for="sinopsis">Sinopsis</label><br>
-	<textarea name="sinopsis" id="sinopsis"></textarea><br>
+	<textarea class='form-control' name="sinopsis" id="sinopsis"></textarea><br>
 	
 	<label for="publi">Publicación</label><br>
-	<input type="date" name="publi" id="publi" required><br>
+	<input class='form-control' type="date" name="publi" id="publi" required><br>
 
 	<label for="plat">Plataforma</label><br>
-	<select name="plat" multiple>
+	<select class='form-control' name="plat" multiple>
 		<?php 
 			$lista=mysqli_query($con,"SELECT * FROM plataforma;");
 			$lista=mysqli_fetch_all($lista,MYSQLI_ASSOC);
@@ -22,7 +22,13 @@
 		?>
 	</select><br>
 
-	<input type="submit" name="Insertar" value="juego" id="juego">
+	<?php
+		if ($_SESSION['allow']) {
+			
+		}
+	?>
+
+	<input class='form-control' type="submit" name="Insertar" value="Enviar" id="juego">
 </form>
 <?php 
 	if(isset($_POST['Insertar'])){
@@ -41,12 +47,18 @@
 		if(isset($_POST['plat']))
 			$n_plat=$_POST["plat"];
 
-		//Subir foto de perfil
+		//Subir imagen
 		if(isset($_FILES['foto']['name']))
-			if($_FILES['foto']['name']!="")
-				$validaImg=subirImg('foto','img/user/',$user);
+			if($_FILES['foto']['name']!=""){
+				$query = mysqli_query($con,"SELECT MAX(id) FROM juego;");
+				$results = mysqli_fetch_assoc($query);
+				$cur_auto_id = $results['MAX(id)'] + 1;
+				$validaImg=subirImg('foto','img/juego/',$cur_auto_id);
+				if(!$validaImg)
+					$validaImg="/img/juego/default.png";
+			}
 
-		$add=mysqli_query($con,"INSERT INTO juego (nombre,publicacion,sinopsis,id_plat,imagen) VALUES ('$nombre','$publi','$sinopsis','$n_plat','$validaImg');");
+		$add=mysqli_query($con,"INSERT INTO juego (nombre,publicacion,sinopsis,id_plat,imagen,allow) VALUES ('$nombre','$publi','$sinopsis','$n_plat','$validaImg',$_SESSION[allow]);");
 		
 		//Registro correcto
 		if($add){

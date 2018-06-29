@@ -33,7 +33,7 @@
 	if(isset($_GET['Busqueda']))
 		$buscar=$_GET['datos'];
 	
-	$pagmax=mysqli_query($con,"SELECT id,nombre,publicacion,sinopsis,imagen,plataforma FROM juego j,plataforma p WHERE j.id_plat=p.n_plat and nombre LIKE '%$buscar%' ORDER BY j.nombre ASC;");
+	$pagmax=mysqli_query($con,"SELECT id,nombre,publicacion,sinopsis,imagen,plataforma FROM juego j,plataforma p WHERE allow=1 AND j.id_plat=p.n_plat and nombre LIKE '%$buscar%' ORDER BY j.nombre ASC;");
 	$pagmax=mysqli_num_rows($pagmax);
 	$pagmax=ceil($pagmax/$count);
 	
@@ -51,7 +51,7 @@
 	}
 	echo "</ol>";
 
-	$juego=mysqli_query($con,"SELECT id,nombre,publicacion,sinopsis,imagen,plataforma FROM juego j,plataforma p WHERE j.id_plat=p.n_plat and nombre LIKE '%$buscar%' ORDER BY j.nombre ASC LIMIT ".$count." OFFSET ".$page*$count." ;");
+	$juego=mysqli_query($con,"SELECT id,nombre,publicacion,sinopsis,imagen,plataforma FROM juego j,plataforma p WHERE allow=1 AND j.id_plat=p.n_plat and nombre LIKE '%$buscar%' ORDER BY j.nombre ASC LIMIT ".$count." OFFSET ".$page*$count." ;");
 	$juego=mysqli_fetch_all($juego,MYSQLI_ASSOC);
 
 	foreach ($juego as $valor) {

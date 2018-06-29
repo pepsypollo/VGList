@@ -4,7 +4,7 @@
 		if (!isset($_GET['insertar']))
 			if(isset($_SESSION['user']))
 				echo '<a href="\juegos.php?insertar=juego" title="">Insertar juego nuevo</a>';
-		if(isset($_GET['page'])){
+		if(isset($_GET['page'])&&!isset($_GET['id'])){
 			include 'script\php\juegoshub.php';
 		}else{
 			if(isset($_GET['insertar']))

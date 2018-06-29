@@ -8,7 +8,7 @@
 	foreach ($get as $valor) {
 		echo "<p>$valor[id_user]<img src=$valor[img] style='float:left;max-width:50px;max-height:50px'></p>";
 		echo "<p>$valor[contenido]</p>";
-		echo "<a href='?id=$_GET[id]&ban=$valor[id_user]'>Denunciar Usuario</a>";
+		echo "<a href='denuncia.php?ban=$valor[id_user]'>Denunciar Usuario</a>";
 	}
 	if(isset($_SESSION['user'])){
 ?>

@@ -1,7 +1,7 @@
 	<?php 
 	include 'script\php\template.php';
 
-	$juegos=mysqli_query($con,"SELECT id,nombre,imagen,plataforma FROM juego j,plataforma p WHERE j.id_plat=p.n_plat ORDER BY publicacion ASC LIMIT 10;");
+	$juegos=mysqli_query($con,"SELECT id,nombre,imagen,plataforma FROM juego j,plataforma p WHERE j.id_plat=p.n_plat AND allow=1 ORDER BY publicacion ASC LIMIT 10;");
 	$juegos=mysqli_fetch_all($juegos, MYSQLI_ASSOC);
 
 	$noticias=mysqli_query($con,"SELECT id, titulo, imagen, id_usuario FROM noticias LIMIT 5;");

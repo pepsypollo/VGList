@@ -16,12 +16,19 @@
 	if(isset($_POST['Insertar'])){
 		$tit=$_POST["tit"];
 		$cuerpo=$_POST["cuerpo"];
-		$validaImg="/img/user/default.png";
+		$validaImg="/img/noticia/default.png";
 
 		//Subir imagen
-		if(isset($_FILES['img']['name']))
-			if($_FILES['img']['name']!="")
-				$validaImg=subirImg('img','img/noticia/',$user);
+		if(isset($_FILES['foto']['name']))
+			if($_FILES['foto']['name']!=""){
+				$query = mysqli_query($con,"SELECT MAX(id) FROM noticias;");
+				$results = mysqli_fetch_assoc($query);
+				$cur_auto_id = $results['MAX(id)'] + 1;
+				$validaImg=subirImg('foto','img/noticia/',$cur_auto_id);
+				if(!$validaImg)
+					$validaImg="/img/noticia/default.png";
+			}
+
 
 		$add=mysqli_query($con,"INSERT INTO noticias (titulo,contenido,imagen,id_usuario) VALUES ('$tit','$validaImg','$cuerpo');");
 		
